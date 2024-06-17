@@ -27,20 +27,3 @@ async function getIP() {
 
 getIP();
 
-const ip = "184.88.123.38"; // Example IP address
-const url = `http://ipwhois.app/json/${ip}`;
-
-async function getInfo() {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error("There was an error!", error);
-  }
-}
-
-getInfo().then((res) => console.log(res));
